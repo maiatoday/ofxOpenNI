@@ -154,4 +154,18 @@ void ofxTrackedUser::debugDraw(const float wScale, const float hScale) {
     ofDrawBitmapString(ofToString((int)id), neck.position[0].X + 10, neck.position[0].Y);
 
     glPopMatrix();
+    debugDrawCenter(wScale, hScale);
+}
+
+void ofxTrackedUser::debugDrawCenter(const float wScale, const float hScale) {
+	glPushMatrix();
+
+    glScalef(wScale, hScale, 1);
+    glColor3f(0,1,0);
+    XnPoint3D projCenter = center;
+    depth_generator.ConvertRealWorldToProjective(2, &projCenter, &projCenter);
+    ofDrawBitmapString("Center", projCenter.X , projCenter.Y+10);
+    ofEllipse(projCenter.X, projCenter.Y, 15, 15);
+    glPopMatrix();
+
 }

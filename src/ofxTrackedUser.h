@@ -74,6 +74,7 @@ class ofxTrackedUser {
 public:
 
 	void debugDraw(const float wScale=1.0f, const float hScale=1.0f);
+	void debugDrawCenter(const float wScale=1.0f, const float hScale=1.0f);
 
 	ofxLimb neck;
 
