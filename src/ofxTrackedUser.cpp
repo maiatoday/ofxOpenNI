@@ -169,3 +169,11 @@ void ofxTrackedUser::debugDrawCenter(const float wScale, const float hScale) {
     glPopMatrix();
 
 }
+
+
+void ofxTrackedUser::getProjectedCenter(XnPoint3D& projCenter) {
+
+    projCenter = center;
+    depth_generator.ConvertRealWorldToProjective(2, &projCenter, &projCenter);
+
+}

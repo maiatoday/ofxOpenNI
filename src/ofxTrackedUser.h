@@ -107,6 +107,7 @@ public:
 
     bool skeletonTracking, skeletonCalibrating, skeletonCalibrated;
     XnPoint3D	center;
+    void getProjectedCenter(XnPoint3D& projCenter);
     
 private:
 
